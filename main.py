@@ -14,22 +14,6 @@ def encode(password):
     return new_password
 
 
-def decode(password):
-    new_password = ''
-    for element in str(password):
-        if element == '2':
-            new_password += '9'
-        elif element == '1':
-            new_password += '8'
-        elif element == '0':
-            new_password += '7'
-        else:
-            char = int(element) - 3
-            new_password += str(char)
-
-    return new_password
-
-
 def print_menu():
     print('menu')
     print('-------------')
