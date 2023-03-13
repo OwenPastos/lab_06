@@ -14,13 +14,28 @@ def encode(password):
     return new_password
 
 
+def decode(password):
+    new_password = ''
+    for element in str(password):
+        if element == '2':
+            new_password += '9'
+        elif element == '1':
+            new_password += '8'
+        elif element == '0':
+            new_password += '7'
+        else:
+            char = int(element) - 3
+            new_password += str(char)
+
+    return new_password
+
+
 def print_menu():
     print('menu')
     print('-------------')
     print('1. Encode')
     print('2. Decode')
     print('3. Quit\n')
-
 
 
 def main():
@@ -32,7 +47,7 @@ def main():
             encoded = encode(password)
             print('Your password has been encoded and stored\n')
         elif user_input == '2':
-            decoded = decode(encoded)
+            decoded = decode(password)
             print(f'The encoded password is {encoded}, and the original password is {decoded}.\n')
         elif user_input == '3':
             quit()
